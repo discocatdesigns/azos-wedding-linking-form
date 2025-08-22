@@ -780,6 +780,43 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
         </div>
     </div>
 
+<!-- Form Script for Google Slides -->
+
+  <form id="myForm" action="https://script.google.com/macros/s/AKfycbxEbI4C5WkjVc7kWQwWPV9nBBJVe60xUWTldJXg-X-Y2tbb-AFR6US5hKG0lbvQPjFS7g/exec" method="post">
+
+      <label for="Full Name">Your Full Name:</label>
+      <input type="text" id="fullName" name="FullName" required>
+
+
+      <label for="Country">Which country will you be coming from?:</label>
+      <input type="text" id="country" name="Country" required>
+
+      <label for="Dietary Rest">Do you have any dietary restrictions?:</label>
+      <input type="text" id="diet" name="Dietary Restrictions" required>
+
+      <label for="Available">Are you available next August?:</label>
+      <select id="available" name="Available">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="Email" required>
+
+      <label for="message">Anything else you'd like to share? (optional):</label>
+      <textarea autocapitalize="word" type="text" id="message" name="Message" required></textarea><br>
+
+      <!-- <input type="range" name="volume" min="0" max="100" step="1">
+      <input type="color" name="preferred_color"> -->
+      <!-- <input type="number" name="quantity" min="1" max="10" step="1"> -->
+      <!-- <input type="datetime-local" name="event_datetime"> -->
+      <!-- <input type="file" name="file_upload">
+      <input type="date"> -->
+
+    <input class="submitButton" type="submit" value="submit" />
+  </form>
+
+
     <!-- Main Page -->
     <div id="main-page">
         <!-- Header -->
