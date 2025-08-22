@@ -676,122 +676,126 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
 <div id="rsvp-form">
     <button class="close-form" onclick="closeRSVPForm()">✕</button>
 
-<form id="myForm"
-      action="https://script.google.com/macros/s/AKfycbxEbI4C5WkjVc7kWQwWPV9nBBJVe60xUWTldJXg-X-Y2tbb-AFR6US5hKG0lbvQPjFS7g/exec"
-      method="post">
+<div id="rsvp-form">
+  <button class="close-form" onclick="closeRSVPForm()">✕</button>
 
-  <!-- Step 1 -->
-  <div class="form-step active" id="step1">
-    <div class="step-indicator">Step 1 of 7</div>
-    <div class="form-group">
-      <label for="name">Your Full Name</label>
-      <input type="text" id="name" name="FullName" required>
-    </div>
-    <div class="form-nav">
-      <div></div>
-      <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button>
-    </div>
-  </div>
+  <form id="myForm"
+        action="https://script.google.com/macros/s/AKfycbxEbI4C5WkjVc7kWQwWPV9nBBJVe60xUWTldJXg-X-Y2tbb-AFR6US5hKG0lbvQPjFS7g/exec"
+        method="post">
 
-  <!-- Step 2 -->
-  <div class="form-step" id="step2">
-    <div class="step-indicator">Step 2 of 7</div>
-    <div class="form-group">
-      <label for="country">Which country will you be coming from?</label>
-      <input type="text" id="country" name="Country" required>
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Back</button>
-      <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
-    </div>
-  </div>
-
-  <!-- Step 3 -->
-  <div class="form-step" id="step3">
-    <div class="step-indicator">Step 3 of 7</div>
-    <div class="form-group">
-      <label for="dietary">Do you have any dietary restrictions?</label>
-      <!-- IMPORTANT: name="Diet" so Apps Script gets e.parameter.Diet -->
-      <textarea id="dietary" name="Diet" placeholder="Please list any dietary restrictions or allergies"></textarea>
-      <p class="disclaimer">We are planning a menu to accommodate all of our guests needs. It will help us greatly to know if you may need vegan or gluten free options. Thank you ❤️</p>
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Back</button>
-      <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
-    </div>
-  </div>
-
-  <!-- Step 4 -->
-  <div class="form-step" id="step4">
-    <div class="step-indicator">Step 4 of 7</div>
-    <div class="form-group">
-      <label>Are you available next August?</label>
-      <div class="radio-options">
-        <div class="radio-option">
-          <!-- IMPORTANT: name="Available" for both radios -->
-          <input type="radio" id="available-yes" name="Available" value="yes" required>
-          <label for="available-yes">Yes</label>
-        </div>
-        <div class="radio-option">
-          <input type="radio" id="available-no" name="Available" value="no">
-          <label for="available-no">No</label>
-        </div>
+    <!-- Step 1 -->
+    <div class="form-step active" id="step1">
+      <div class="step-indicator">Step 1 of 7</div>
+      <div class="form-group">
+        <label for="name">Your Full Name</label>
+        <input type="text" id="name" name="FullName" required>
+      </div>
+      <div class="form-nav">
+        <div></div>
+        <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button>
       </div>
     </div>
-    <div class="form-nav">
-      <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Back</button>
-      <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
-    </div>
-  </div>
 
-  <!-- Step 5 -->
-  <div class="form-step" id="step5">
-    <div class="step-indicator">Step 5 of 7</div>
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <!-- IMPORTANT: name="Email" -->
-      <input type="email" id="email" name="Email" required>
-      <p class="disclaimer">This is so that we can notify you as soon as we set the date and the official RSVP will be open ❤️</p>
+    <!-- Step 2 -->
+    <div class="form-step" id="step2">
+      <div class="step-indicator">Step 2 of 7</div>
+      <div class="form-group">
+        <label for="country">Which country will you be coming from?</label>
+        <input type="text" id="country" name="Country" required>
+      </div>
+      <div class="form-nav">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
+      </div>
     </div>
-    <div class="form-nav">
-      <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Back</button>
-      <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
-    </div>
-  </div>
 
-  <!-- Step 6 -->
-  <div class="form-step" id="step6">
-    <div class="step-indicator">Step 6 of 7</div>
-    <div class="form-group">
-      <label for="message">Anything else you'd like to share? (optional)</label>
-      <!-- IMPORTANT: name="Message" -->
-      <textarea id="message" name="Message"></textarea>
+    <!-- Step 3 -->
+    <div class="form-step" id="step3">
+      <div class="step-indicator">Step 3 of 7</div>
+      <div class="form-group">
+        <label for="dietary">Do you have any dietary restrictions?</label>
+        <!-- IMPORTANT: name="Diet" (matches e.parameter.Diet) -->
+        <textarea id="dietary" name="Diet" placeholder="Please list any dietary restrictions or allergies"></textarea>
+        <p class="disclaimer">We are planning a menu to accommodate all of our guests needs. It will help us greatly to know if you may need vegan or gluten free options. Thank you ❤️</p>
+      </div>
+      <div class="form-nav">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
+      </div>
     </div>
-    <div class="checkbox-group">
-      <input type="checkbox" id="destination" name="destination" required>
-      <label for="destination">Please acknowledge that you are aware that due to the planned rural nature of this event the hosts will stay in communication with me to ensure that I will be safe and comfortable during the event, this includes getting there and potential overnight stays. Us, the hosts, strive for our guests' ultimate happiness and satisfaction ⭐⭐⭐⭐⭐</label>
-    </div>
-    <div class="form-nav">
-      <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Back</button>
-      <button type="button" class="btn btn-primary" onclick="nextStep(6)">Next</button>
-    </div>
-  </div>
 
-  <!-- Step 7 -->
-  <div class="form-step" id="step7">
-    <div class="step-indicator">Step 7 of 7</div>
-    <div class="form-group">
-      <p>Thank you for completing our RSVP form! Click the button below to send us your information.</p>
+    <!-- Step 4 -->
+    <div class="form-step" id="step4">
+      <div class="step-indicator">Step 4 of 7</div>
+      <div class="form-group">
+        <label>Are you available next August?</label>
+        <div class="radio-options">
+          <div class="radio-option">
+            <!-- IMPORTANT: both radios use name="Available" -->
+            <input type="radio" id="available-yes" name="Available" value="yes" required>
+            <label for="available-yes">Yes</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="available-no" name="Available" value="no">
+            <label for="available-no">No</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
+      </div>
     </div>
-    <div class="form-nav">
-      <button type="button" class="btn btn-secondary" onclick="prevStep(7)">Back</button>
-      <!-- SUBMITS THE FORM TO YOUR GOOGLE SCRIPT -->
-      <button type="submit" class="btn btn-primary">Submit Pre-RSVP</button>
-    </div>
-  </div>
-</form>
 
+    <!-- Step 5 -->
+    <div class="form-step" id="step5">
+      <div class="step-indicator">Step 5 of 7</div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <!-- IMPORTANT: name="Email" -->
+        <input type="email" id="email" name="Email" required>
+        <p class="disclaimer">This is so that we can notify you as soon as we set the date and the official RSVP will be open ❤️</p>
+      </div>
+      <div class="form-nav">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="form-step" id="step6">
+      <div class="step-indicator">Step 6 of 7</div>
+      <div class="form-group">
+        <label for="message">Anything else you'd like to share? (optional)</label>
+        <!-- IMPORTANT: name="Message" -->
+        <textarea id="message" name="Message"></textarea>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="destination" name="destination" required>
+        <label for="destination">Please acknowledge that you are aware that due to the planned rural nature of this event the hosts will stay in communication with me to ensure that I will be safe and comfortable during the event, this includes getting there and potential overnight stays. Us, the hosts, strive for our guests' ultimate happiness and satisfaction ⭐⭐⭐⭐⭐</label>
+      </div>
+      <div class="form-nav">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(6)">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="form-step" id="step7">
+      <div class="step-indicator">Step 7 of 7</div>
+      <div class="form-group">
+        <p>Thank you for completing our RSVP form! Click the button below to send us your information.</p>
+      </div>
+      <div class="form-nav">
+        <button type="button" class="btn btn-secondary" onclick="prevStep(7)">Back</button>
+        <!-- SUBMITS THE FORM TO YOUR GOOGLE SCRIPT -->
+        <button type="submit" class="btn btn-primary">Submit Pre-RSVP</button>
+      </div>
+    </div>
+
+  </form>
 </div>
+
                 </div>
             </form>
         </div>
