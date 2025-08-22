@@ -673,15 +673,19 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
     <p>We aim to do it mid-end of August, we hope to have the exact date soon.</p>
 
         </div>
-        <div id="rsvp-form">
-            <button class="close-form" onclick="closeRSVPForm()">✕</button>
+<div id="rsvp-form">
+    <button class="close-form" onclick="closeRSVPForm()">✕</button>
+
+    <form id="myForm"
+          action="https://script.google.com/macros/s/AKfycbxEbI4C5WkjVc7kWQwWPV9nBBJVe60xUWTldJXg-X-Y2tbb-AFR6US5hKG0lbvQPjFS7g/exec"
+          method="post">
 
                 
                 <div class="form-step active" id="step1">
                     <div class="step-indicator">Step 1 of 7</div>
                     <div class="form-group">
                         <label for="name">Your Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="FullName" required>
                     </div>
                     <div class="form-nav">
                         <div></div> <!-- Empty div for spacing -->
@@ -693,7 +697,7 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
                     <div class="step-indicator">Step 2 of 7</div>
                     <div class="form-group">
                         <label for="country">Which country will you be coming from?</label>
-                        <input type="text" id="country" name="country" required>
+                        <input type="text" id="country" name="Country" required>
                     </div>
                     <div class="form-nav">
                         <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Back</button>
@@ -705,7 +709,7 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
                     <div class="step-indicator">Step 3 of 7</div>
                     <div class="form-group">
                         <label for="dietary">Do you have any dietary restrictions?</label>
-                        <textarea id="dietary" name="dietary" placeholder="Please list any dietary restrictions or allergies"></textarea>
+                        <textarea id="dietary" name="Diet" placeholder="Please list any dietary restrictions or allergies"></textarea>
                         <p class="disclaimer">We are planning a menu to accommodate all of our guests needs. It will help us greatly to know if you may need vegan or gluten free options. Thank you ❤️</p>
                     </div>
                     <div class="form-nav">
@@ -720,11 +724,11 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
                         <label>Are you available next August?</label>
                         <div class="radio-options">
                             <div class="radio-option">
-                                <input type="radio" id="available-yes" name="availability" value="yes" required>
+                                <input type="radio" id="available-yes" name="Available" value="yes" required>
                                 <label for="available-yes">Yes</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" id="available-no" name="availability" value="no">
+                                <input type="radio" id="available-no" name="Available" value="no">
                                 <label for="available-no">No</label>
                             </div>
                         </div>
@@ -739,7 +743,7 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
                     <div class="step-indicator">Step 5 of 7</div>
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="Email" required>
                         <p class="disclaimer">This is so that we can notify you as soon as we set the date and the official RSVP will be open ❤️</p>
                     </div>
                     <div class="form-nav">
@@ -752,7 +756,7 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
                     <div class="step-indicator">Step 6 of 7</div>
                     <div class="form-group">
                         <label for="message">Anything else you'd like to share? (optional)</label>
-                        <textarea id="message" name="message"></textarea>
+                        <textarea id="message" name="Message"></textarea>
                     </div>
                     <div class="checkbox-group">
                         <input type="checkbox" id="destination" name="destination" required>
@@ -773,39 +777,14 @@ filter: drop-shadow(0 0 15px rgba(168, 138, 167, 0.4));
         <button type="button" class="btn btn-secondary" onclick="prevStep(7)">Back</button>
         <!-- The fixed button is below -->
         <button type="button" class="btn btn-primary" onclick="submitForm()">Submit Pre-RSVP</button>
+
     </div>
+</form> <!-- HERE -->
 </div>
                 </div>
             </form>
         </div>
     </div>
-
-<!-- Form Script for Google Slides -->
-
-  <form id="myForm" action="https://script.google.com/macros/s/AKfycbxEbI4C5WkjVc7kWQwWPV9nBBJVe60xUWTldJXg-X-Y2tbb-AFR6US5hKG0lbvQPjFS7g/exec" method="post">
-    <label for="fullName">Your Full Name:</label>
-    <input type="text" id="fullName" name="FullName" required>
-
-    <label for="country">Which country will you be coming from?:</label>
-    <input type="text" id="country" name="Country" required>
-
-    <label for="diet">Do you have any dietary restrictions?:</label>
-    <input type="text" id="diet" name="Diet">
-
-    <label for="available">Are you available next August?:</label>
-    <select id="available" name="Available">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select>
-
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="Email" required>
-
-    <label for="message">Anything else you'd like to share? (optional):</label>
-    <textarea id="message" name="Message"></textarea><br>
-
-    <input class="submitButton" type="submit" value="Submit" />
-</form>
 
 
     <!-- Main Page -->
